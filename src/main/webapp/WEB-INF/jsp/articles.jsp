@@ -4,15 +4,20 @@ Copyright (C) 2012, Excilys.
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <link rel="stylesheet" href="<c:url value="/css/lib/jquery.dataTables.css"/>" type="text/css" />
-    <script type="text/javascript" src="<c:url value="/js/lib/jquery.js"/>"></script>
-    <script type="text/javascript" src="<c:url value="/js/lib/jquery.dataTables.min.js"/>"></script>
+    <spring:url value="/webjars/jquery/1.9.1/jquery.js" var="jQuery"/>
+    <script src="${jQuery}"></script>
+
+    <spring:url value="/webjars/datatables/1.9.4/media/js/jquery.dataTables.js" var="jQueryDatatables"/>
+    <script src="${jQueryDatatables}"></script>
+    <spring:url value="/webjars/datatables/1.9.4/media/css/jquery.dataTables.css" var="jQueryDatatablesCss"/>
+    <link href="${jQueryDatatablesCss}" rel="stylesheet"></link>
+
     <title>Recherche Articles</title>
     <style type="text/css">
         #contenu {

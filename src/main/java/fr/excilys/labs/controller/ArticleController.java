@@ -25,7 +25,7 @@ import fr.excilys.labs.service.ArticleSearchBean;
 import fr.excilys.labs.service.IArticleService;
 
 @Controller
-@RequestMapping("articles/search.htm")
+@RequestMapping("articles/search")
 public class ArticleController {
 
     private static final String COMMAND_NAME = "searchBean";
@@ -44,12 +44,12 @@ public class ArticleController {
         return Arrays.asList(ERubriqueArticle.values());
     }
 
-    @RequestMapping(method = GET)
+    @RequestMapping(method = GET, produces = "text/html")
     public String load(Model model) {
         return "articles";
     }
 
-    @RequestMapping(method = POST)
+    @RequestMapping(method = POST, produces = "application/json")
     @ResponseBody
     public DatatableResponse<Article> search(@ModelAttribute(COMMAND_NAME) ArticleSearchBean searchBean,
             @RequestBody MultiValueMap<String, String> parametresAjax) {

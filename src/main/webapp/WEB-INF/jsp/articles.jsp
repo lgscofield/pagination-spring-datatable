@@ -60,7 +60,7 @@ Copyright (C) 2012, Excilys.
             "bServerSide" : true,
             "bProcessing" : true,
             "bDestroy" : true,
-            "sAjaxSource" : "search.htm",
+            "sAjaxSource" : "search",
             "fnServerData" : function(sSource, aoData, fnCallback) {
                 $.ajax({
                     "dataType" : 'json',

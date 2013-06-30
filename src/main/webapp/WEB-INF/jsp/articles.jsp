@@ -10,15 +10,16 @@ Copyright (C) 2012, Excilys.
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+    <title>Recherche Articles</title>
+    
+    <spring:url value="/webjars/datatables/1.9.4/media/css/jquery.dataTables.css" var="jQueryDatatablesCss"/>
+    <link href="${jQueryDatatablesCss}" rel="stylesheet"></link>
+
     <spring:url value="/webjars/jquery/1.9.1/jquery.js" var="jQuery"/>
     <script src="${jQuery}"></script>
 
     <spring:url value="/webjars/datatables/1.9.4/media/js/jquery.dataTables.js" var="jQueryDatatables"/>
     <script src="${jQueryDatatables}"></script>
-    <spring:url value="/webjars/datatables/1.9.4/media/css/jquery.dataTables.css" var="jQueryDatatablesCss"/>
-    <link href="${jQueryDatatablesCss}" rel="stylesheet"></link>
-
-    <title>Recherche Articles</title>
     <style type="text/css">
         #contenu {
             width : 80%;
@@ -52,6 +53,7 @@ Copyright (C) 2012, Excilys.
             "bFilter" : false,
             "bInfo" : false,
             "bSort" : false,
+            "bStateSave": true,   // Save table state in cookie
             "sPaginationType" : "full_numbers",
             "sDom" : '<"#top"p>rt<"#bottom"p>',
             "oLanguage" : {

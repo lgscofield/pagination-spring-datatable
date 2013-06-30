@@ -6,23 +6,22 @@ package fr.excilys.labs.controller;
 import java.util.ArrayList;
 import java.util.List;
 
-import fr.excilys.labs.modele.Article;
+/**
+ * Object that gets returned to jQuery datatables AJAX calls in JSON.
+ *
+ */
+public class DatatableResponse<T> {
 
-public class ArticleReponseJson {
-
-    /* Paramètre de controle */
     private Integer sEcho;
 
-    /* Nombre total de résultats correspondant aux critères de recherche */
+    /* Total count of results to display in table */
     private Integer iTotalDisplayRecords;
 
-    /* Liste des resultats
-       Par défaut dataTable cherche les résultats dans une propriété nommée aaData.
-       On peut configurer le nom de la propriété.
+    /* List of results
      */
-    private List<Article> aaData = new ArrayList<Article>();
+    private List<T> aaData = new ArrayList<T>();
 
-    public ArticleReponseJson() {
+    public DatatableResponse() {
         super();
     }
 
@@ -42,11 +41,11 @@ public class ArticleReponseJson {
         this.iTotalDisplayRecords = iTotalDisplayRecords;
     }
 
-    public List<Article> getAaData() {
+    public List<T> getAaData() {
         return aaData;
     }
 
-    public void setAaData(List<Article> aaData) {
+    public void setAaData(List<T> aaData) {
         this.aaData = aaData;
     }
 
